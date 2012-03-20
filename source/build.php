@@ -33,7 +33,7 @@ function is_empty_folder($dir) {
 function get($name,$type) {
 	if(isset($name) && $name !== null) {
 		if($_SERVER["SERVER_NAME"] === "localhost") {
-			$server = "http://".$_SERVER["SERVER_NAME"]."/JS5/source/";
+			$server = "http://".$_SERVER["SERVER_NAME"]."/js5/source/";
 		} else {
 			$server = "http://".$_SERVER["SERVER_NAME"]."/"."source/";
 		}
@@ -93,7 +93,7 @@ function parseValue($string,$param) {
 }
 function buildDev($license) {
 	global $time, $version, $build, $internalBuild;
-	$server = "http://".$_SERVER["SERVER_NAME"]."/JS5/source/";
+	$server = "http://".$_SERVER["SERVER_NAME"]."/js5/source/";
 
 	$moduleNames = get(null,"fileNames");
 	$moduleNames = explode(",",$moduleNames);

@@ -15,7 +15,7 @@ function debug() {
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>JS5 Compiler</title>
+	<title>js5 Compiler</title>
 	<link href="source/index.css" rel="stylesheet" type="text/css" />
 	<script src="build/js5-build.js"></script>
 	<script src="source/moment.min.js"></script>
