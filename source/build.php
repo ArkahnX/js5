@@ -1,6 +1,6 @@
 <?php
 /**
- * modified 08/03/2012 5:01 PM
+ * modified 20/03/2012 3:00 PM
  */
 $start = microtime(true);
 date_default_timezone_set('America/Vancouver');
@@ -91,7 +91,7 @@ function parseValue($string,$param) {
 	$content = $content[count($content)-1];
 	return $content;
 }
-function buildDev() {
+function buildDev($license) {
 	global $time, $version, $build, $internalBuild;
 	$server = "http://".$_SERVER["SERVER_NAME"]."/JS5/source/";
 
@@ -115,15 +115,13 @@ function buildDev() {
 	echo makeTime("compiling js5");
 	$string = get("js/js5.js","function");
 	$patterns = array();
-	$patterns[0] = '/\/\/#time/';
-	$patterns[1] = '/\/\/#version/';
-	$patterns[2] = '/\/\/#extend/';
-	$patterns[3] = '/\/\/#modules/';
+	$patterns[0] = '/\/\/#license/';
+	$patterns[1] = '/\/\/#extend/';
+	$patterns[2] = '/\/\/#modules/';
 	$replacements = array();
-	$replacements[0] = $time;
-	$replacements[1] = "Version ".$version." - ".$build;
-	$replacements[2] = get("js/extend.js","function");
-	$replacements[3] = $modules;
+	$replacements[0] = $license;
+	$replacements[1] = get("js/extend.js","function");
+	$replacements[2] = $modules;
 	ksort($patterns);
 	ksort($replacements);
 	$file = preg_replace($patterns, $replacements, $string);
@@ -163,22 +161,22 @@ function buildLicense() {
 }
 if(isset($_GET["type"])) {
 	$type = $_GET["type"];
+	$license = buildLicense();
 	echo makeTime("building: <b>".$type."</b>",false);
 	echo makeTime("<pre>",false);
 	if($type === "all") {
 		include("php-closure.php");
-		$license = buildLicense();
-		buildDev();
+		buildDev($license);
 		buildPretty($license);
 		buildUgly($license);
 	} else if($type === "dev") {
-		buildDev();
+		buildDev($license);
 	} else if($type === "prty") {
 		include("php-closure.php");
-		buildPretty(buildLicense());
+		buildPretty($license);
 	} else if($type === "min") {
 		include("php-closure.php");
-		buildUgly(buildLicense());
+		buildUgly($license);
 	} else {
 		index();
 	}
