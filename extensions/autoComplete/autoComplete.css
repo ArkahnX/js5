@@ -1,0 +1,35 @@
+#autoCompleteContainer * {
+	box-sizing: border-box;
+	width:200px;
+}
+#autoCompleteContainer {
+	border:1px solid gray;
+	display: inline-block;
+}
+#autoCompleteInput {
+	border:none;
+	border-bottom:1px solid black;
+	margin:0;
+	padding:5px;
+	height:35px;
+}
+#autoCompleteResults {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+#autoCompleteResults li {
+	border-bottom:1px solid gray;
+	padding:5px;
+	height:35px;
+	line-height:1.5;
+	color:gray;
+
+}
+#autoCompleteResults li b {
+	color:black;
+}
+#autoCompleteResults li:last-child {
+	border-bottom:none;
+	clear: both;
+}

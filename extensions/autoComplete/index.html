@@ -1,0 +1,26 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content="">
+	<link rel="stylesheet" href="autoComplete.css">
+</head>
+<body>
+	<div id="autoCompleteContainer">
+		<input type="text" id="autoCompleteInput">
+		<ul id="autoCompleteResults"></ul>
+	</div>
+	<script src="../../build/js5-build.js"></script>
+	<script src="autoComplete.js"></script>
+	<script type="text/javascript">
+	js5.ready(function() {
+		js5("#autoCompleteInput").autoComplete({
+			input: "#autoCompleteInput",
+			output: "#autoCompleteResults",
+			names: ["Google","yahoo","microsoft","apple","bing","windows","mac"],
+			maxResults: 5
+		});
+	});
+	</script>
+</body>
+</html>
