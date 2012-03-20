@@ -1,0 +1,2 @@
+This wiki documents the functionality contained in js5, a webkit specialized javascript library based on the syntax used by jQuery.
+Webkit optimized refers to the fact that this library has been built specifically for webkit, and not tested in other browsers, nor is there any prefixes for other browsers where applicable.
