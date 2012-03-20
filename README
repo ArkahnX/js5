@@ -1,2 +1,10 @@
-This wiki documents the functionality contained in js5, a webkit specialized javascript library based on the syntax used by jQuery.
-Webkit optimized refers to the fact that this library has been built specifically for webkit, and not tested in other browsers, nor is there any prefixes for other browsers where applicable.
+js5 Library
+===========
+The js5 library was built by me in order to accomplish two things.
+1. To learn how to create chainable commands.
+2. To make an extensible library specifically for chrome and my development projects in replace of jQuery.
+
+Several functions are taken right out of jQuery such as jQuery.each as there was no better optomized alternative. Other functions have been hand crafted to work best in chrome.
+
+A description of the folders in this repository:
+-
